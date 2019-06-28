@@ -5,4 +5,4 @@ header-img:      #显示在首页的背景图片
 email: You@gmail.com  
 description: "You Blog"              #网站介绍
 keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone" #关键词
-url: "https://hlwdy.github.io/blog"          # 这个就是填写你的博客地址
+url: "https://hlwdy.github.io"          # 这个就是填写你的博客地址
