@@ -1,7 +1,6 @@
 theme: jekyll-theme-cayman
 title: You Blog                     #标题
 SEOTitle: 你的博客 | You Blog        #显示在浏览器上搜索的时候显示的标题
-header-img:      #显示在首页的背景图片
 email: You@gmail.com  
 description: "You Blog"              #网站介绍
 url: "https://hlwdy.github.io/blog"          # 这个就是填写你的博客地址
