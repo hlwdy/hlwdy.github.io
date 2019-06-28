@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>blog - [c#]cefsharp</title>
+</head>
+
+<body>
+<div style="font-family: 微软雅黑;">[c#]cefsharp的使用</div>
+<div style="font-family: 微软雅黑;">cefsharp项目源码: https://github.com/cefsharp/CefSharp</div>
+<div style="font-family: 微软雅黑;">首先引用cefsharp: Nugget 中搜索并安装 CefSharp.Winform, 并引用命名空间CefSharp.WinForms和CefSharp</div>
+<p>
+<p style="font-family: 微软雅黑;"> //配置cefsharp初始设置</p>
+<p style="font-family: 微软雅黑;">var setting = new CefSettings(); </p>
+<p style="font-family: 微软雅黑;">setting.Locale = "zh-CN"; //缓存路径 </p>
+<p style="font-family: 微软雅黑;">setting.CachePath = Application.StartupPath+"\\BrowserCache"; //浏览器引擎的语言 </p>
+<p style="font-family: 微软雅黑;">setting.AcceptLanguageList = "zh-CN,zh;q=0.8"; </p>
+<p style="font-family: 微软雅黑;">setting.LocalesDirPath = Application.StartupPath + "\\locales"; //日志文件 </p>
+<p style="font-family: 微软雅黑;">setting.LogFile = Application.StartupPath + "\\LogData"; </p>
+<p style="font-family: 微软雅黑;">setting.PersistSessionCookies = true; </p>
+<p style="font-family: 微软雅黑;">&nbsp;</p>
+<p style="font-family: 微软雅黑;">//支持flash播放(需要在指定目录下放置flash pp版dll) </p>
+<p style="font-family: 微软雅黑;">setting.UserDataPath = Application.StartupPath + "\\userData"; setting.CefCommandLineArgs.Add("enable-npapi", "1"); </p>
+<p style="font-family: 微软雅黑;">setting.CefCommandLineArgs.Add("ppapi-flash-path", Environment.CurrentDirectory + "\\plugins\\pepflashplayer32_32_0_0_207.dll"); </p>
+<p style="font-family: 微软雅黑;">setting.CefCommandLineArgs.Add("ppapi-flash-version", "32.0.0.207"); </p>
+<p style="font-family: 微软雅黑;">&nbsp;</p>
+<p style="font-family: 微软雅黑;">//设置cef </p>
+<p style="font-family: 微软雅黑;">Cef.Initialize(setting, true, browserProcessHandler: null);</p>
+<p style="font-family: 微软雅黑;">&nbsp;</p>
+<p style="font-family: 微软雅黑;">&nbsp;</p>
+<p style="font-family: 微软雅黑;">&nbsp;</p>
+<p style="font-family: 微软雅黑;">//创建浏览器部分代码</p>
+<p style="font-family: 微软雅黑;">webBrower = new ChromiumWebBrowser(url); //url为初始地址</p>
+<p style="font-family: 微软雅黑;"> webBrower.Dock = DockStyle.Fill;// 填充方式 </p>
+<p style="font-family: 微软雅黑;">Controls.Add(webBrower); //添加浏览器</p>
+</p>
+</body>
+</html>
