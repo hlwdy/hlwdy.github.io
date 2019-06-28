@@ -4,5 +4,7 @@ SEOTitle: 你的博客 | You Blog        #显示在浏览器上搜索的时候�
 header-img:      #显示在首页的背景图片
 email: You@gmail.com  
 description: "You Blog"              #网站介绍
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone" #关键词
-url: "https://hlwdy.github.io"          # 这个就是填写你的博客地址
+url: "https://hlwdy.github.io/blog"          # 这个就是填写你的博客地址
+sidebar: true                           # 是否开启侧边栏.
+sidebar-about-description: "说点装逼的话。。。"
+sidebar-avatar:/img/avatar-by.JPG
