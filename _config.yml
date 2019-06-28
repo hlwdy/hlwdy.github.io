@@ -1,7 +1,7 @@
 theme: jekyll-theme-cayman
 title: You Blog                     #标题
 SEOTitle: 你的博客 | You Blog        #显示在浏览器上搜索的时候显示的标题
-header-img: img/post-bg-rwd.jpg     #显示在首页的背景图片
+header-img:      #显示在首页的背景图片
 email: You@gmail.com  
 description: "You Blog"              #网站介绍
 keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone" #关键词
