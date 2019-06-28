@@ -7,4 +7,3 @@ description: "You Blog"              #网站介绍
 url: "https://hlwdy.github.io/blog"          # 这个就是填写你的博客地址
 sidebar: true                           # 是否开启侧边栏.
 sidebar-about-description: "说点装逼的话。。。"
-sidebar-avatar:/img/avatar-by.JPG
