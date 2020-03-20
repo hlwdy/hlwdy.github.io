@@ -1,0 +1,32 @@
+@import url("base.css");
+
+#viewer-pane {
+	background-color: #232323;
+}
+
+#viewer {
+	color: white;
+}
+
+#viewer *:not(pre) > code {
+	border: 1px solid #6a6a6a;
+	background-color: #393939;
+}
+
+#viewer a {
+	color: #0080ff;
+}
+
+#viewer blockquote {
+	color: #bbb;
+	border-left: 0.25em solid #444;
+}
+
+#viewer table tr {
+	background-color: #232323;
+}
+
+#viewer table td,
+#viewer table th {
+	border: 1px solid #777;
+}
