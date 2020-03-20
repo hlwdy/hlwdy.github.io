@@ -57,7 +57,7 @@
   "description": "Fast math typesetting for the web.",
   "devDependencies": {
     "browserify": "^10.2.4",
-    "clean-css": "~2.2.15",
+    "clean-css": "~4.2.3",
     "eslint": "^1.10.3",
     "express": "~3.3.3",
     "glob": "^5.0.15",
