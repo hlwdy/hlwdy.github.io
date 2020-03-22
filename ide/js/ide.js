@@ -138,44 +138,6 @@ function localStorageGetItem(key) {
     }
 }
 
-function showMessages() {
-    var width = $about.offset().left - parseFloat($about.css("padding-left")) -
-        $navigationMessage.parent().offset().left - parseFloat($navigationMessage.parent().css("padding-left")) - 5;
-
-    if (width < 200 || messagesData === undefined) {
-        return;
-    }
-
-    var messages = messagesData["messages"];
-
-    $navigationMessage.css("animation-duration", messagesData["duration"]);
-    $navigationMessage.parent().width(width - 5);
-
-    var combinedMessage = "";
-    for (var i = 0; i < messages.length; ++i) {
-        combinedMessage += `${messages[i]}`;
-        if (i != messages.length - 1) {
-            combinedMessage += "&nbsp".repeat(Math.min(200, messages[i].length));
-        }
-    }
-
-    $navigationMessage.html(combinedMessage);
-}
-
-function loadMessages() {
-    $.ajax({
-        url: "https://minio.judge0.com/public/messages.json",
-        type: "GET",
-        headers: {
-            "Accept": "application/json"
-        },
-        success: function(data, textStatus, jqXHR) {
-            messagesData = data;
-            showMessages();
-        }
-    });
-}
-
 function showApiUrl() {
     $("#api-url").attr("href", apiUrl);
 }
@@ -422,7 +384,6 @@ function editorsUpdateFontSize(fontSize) {
 
 $(window).resize(function() {
     layout.updateSize();
-    showMessages();
 });
 
 $(document).ready(function() {
@@ -513,7 +474,6 @@ $(document).ready(function() {
     });
 
     showApiUrl();
-    loadMessages();
 
     require(["vs/editor/editor.main", "monaco-vim", "monaco-emacs"], function(ignorable, MVim, MEmacs) {
         layout = new GoldenLayout(layoutConfig, $("#site-content"));
@@ -638,7 +598,7 @@ $(document).ready(function() {
         });
 
         layout.on("initialised", function() {
-            $(".monaco-editor")[0].appendChild($("#editor-status-line")[0]);
+            //$(".monaco-editor")[0].appendChild($("#editor-status-line")[0]);
             loadRandomLanguage();
             $("#site-navigation").css("border-bottom", "1px solid black");
             sourceEditor.focus();
