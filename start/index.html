@@ -176,7 +176,7 @@
         function addofftens(id) {
             var text = prompt("请输入网址", "");
             ofs[id] = text;
-            setCookie('ofs', ofs.toJSONString());
+            setCookie('ofs', JSON.stringify(ofs));
         }
     </script>
     <input type="text" name="q" id="search-input" autocomplete="off">
