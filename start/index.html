@@ -111,6 +111,17 @@
         }
 
         $(document).ready(function() {
+            switch (getCookie('nows')) {
+                case 'baidu':
+                    nows = 0;
+                    break;
+                case 'google':
+                    nows = 1;
+                    break;
+                case 'bing':
+                    nows = 2;
+                    break;
+            }
             if (getCookie('nows'))
                 document.getElementsByName(getCookie('nows'))[0].style.backgroundColor = 'blue';
             else
