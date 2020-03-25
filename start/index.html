@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta content="zh-cn" http-equiv="Content-Language" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Welcome!</title>
+    <style type="text/css">
+        #search-input:hover {
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px rgba(102, 175, 233, .6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 25px rgba(0, 0, 0, .2);
+            transition: all 0.5s ease 0s;
+            -moz-transition: all 0.5s ease 0s;
+            -webkit-transition: all 0.5s ease 0s;
+        }
+        
+        #search-input {
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 0, 0, .2);
+            transition: all 0.5s ease 0s;
+            -moz-transition: all 0.5s ease 0s;
+            -webkit-transition: all 0.5s ease 0s;
+            position: absolute;
+            width: 40%;
+            left: calc((100% - 40%) / 2);
+            top: 35%;
+            border: 0px solid #ccc;
+            padding: 13px 0px;
+            outline: medium;
+            border-radius: 18px;
+            padding-left: 15px;
+            border-width: 0px;
+        }
+        
+        #schoose {
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 0, 0, .2);
+            position: absolute;
+            width: 22%;
+            background-color: rgb(34, 145, 197);
+            left: calc((100% - 22%) / 2);
+            top: 45%;
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+        }
+        
+        #schoose-one {
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 0, 0, .2);
+            width: 65px;
+            background-color: rgb(69, 169, 216);
+            float: left;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+            cursor: pointer;
+            padding: 5px;
+            transition: all 0.5s ease 0s;
+            -moz-transition: all 0.5s ease 0s;
+            -webkit-transition: all 0.5s ease 0s;
+            border-radius: 4px;
+        }
+        
+        #schoose-one:hover {
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 12px rgba(102, 175, 233, .6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 12px rgba(0, 0, 0, .2);
+            background-color: rgb(119, 193, 228) !important;
+            transition: all 0.5s ease 0s;
+            -moz-transition: all 0.5s ease 0s;
+            -webkit-transition: all 0.5s ease 0s;
+        }
+    </style>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <script>
+        var nows = 0;
+
+        function changes(id) {
+            var slist = ['baidu', 'google', 'bing'];
+            for (i in slist) {
+                if (slist[i] != id)
+                    document.getElementsByName(slist[i])[0].style.backgroundColor = 'rgb(69, 169, 216)';
+                else
+                    nows = i;
+            }
+            document.getElementsByName(id)[0].style.backgroundColor = 'blue';
+        }
+
+        function search(text) {
+            var searchurl = ['https://www.baidu.com/s?ie=UTF-8&wd=', 'https://www.google.com/search?ie=UTF-8&q=', 'https://cn.bing.com/search?q='];
+            window.open(searchurl[nows] + text, '_blank');
+        }
+
+        $(document).ready(function() {
+            document.getElementsByName('baidu')[0].style.backgroundColor = 'blue';
+            $('#search-input').keyup(function(event) {
+                if (event.keyCode == 13) {
+                    search($('#search-input').val());
+                }
+            });
+        })
+    </script>
+    <input type="text" name="q" id="search-input" autocomplete="off">
+    <div id="schoose">
+        <div id="schoose-one" name="baidu" onclick="changes('baidu')">Baidu</div>
+        <div id="schoose-one" name="google" onclick="changes('google')">Google</div>
+        <div id="schoose-one" name="bing" onclick="changes('bing')">Bing</div>
+    </div>
+</body>
+
+</html>
