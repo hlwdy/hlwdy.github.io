@@ -169,7 +169,7 @@
 
             if (getCookie('ofs')) {
                 ofs = JSON.parse(getCookie('ofs'));
-                for (i = 0; i < 5; i++) {
+                for (i = 1; i <= 5; i++) {
                     if (ofs['of' + i.toString()] != '')
                         document.getElementsByName('of' + i.toString())[0].getElementsByTagName('span')[0].innerText = ofs['of' + i.toString()];
                 }
