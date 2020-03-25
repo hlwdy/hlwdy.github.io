@@ -142,6 +142,14 @@
             window.open(searchurl[nows] + text, '_blank');
         }
 
+        var ofs = {
+            'of1': '',
+            'of2': '',
+            'of3': '',
+            'of4': '',
+            'of5': '',
+        };
+
         $(document).ready(function() {
             switch (getCookie('nows')) {
                 case 'baidu':
@@ -158,20 +166,22 @@
                 document.getElementsByName(getCookie('nows'))[0].style.backgroundColor = 'blue';
             else
                 document.getElementsByName('baidu')[0].style.backgroundColor = 'blue';
+
+            if (getCookie('ofs')) {
+                ofs = JSON.parse(getCookie('ofs'));
+                document.getElementsByName('of1')[0].getElementsByTagName('span')[0].innerText = ofs['of1'];
+                document.getElementsByName('of2')[0].getElementsByTagName('span')[0].innerText = ofs['of1'];
+                document.getElementsByName('of3')[0].getElementsByTagName('span')[0].innerText = ofs['of1'];
+                document.getElementsByName('of4')[0].getElementsByTagName('span')[0].innerText = ofs['of1'];
+                document.getElementsByName('of5')[0].getElementsByTagName('span')[0].innerText = ofs['of1'];
+            }
+
             $('#search-input').keyup(function(event) {
                 if (event.keyCode == 13) {
                     search($('#search-input').val());
                 }
             });
         })
-
-        var ofs = {
-            'of1': '',
-            'of2': '',
-            'of3': '',
-            'of4': '',
-            'of5': '',
-        };
 
         function addofftens(id) {
             var text = prompt("请输入网址", "");
