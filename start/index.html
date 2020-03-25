@@ -76,6 +76,21 @@
 
 <body>
     <script>
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg))
+                return unescape(arr[2]);
+            else
+                return null;
+        }
+
+        function setCookie(name, value) {
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+        }
+
         var nows = 0;
 
         function changes(id) {
@@ -86,6 +101,7 @@
                 else
                     nows = i;
             }
+            setCookie('nows', id);
             document.getElementsByName(id)[0].style.backgroundColor = 'blue';
         }
 
@@ -95,7 +111,10 @@
         }
 
         $(document).ready(function() {
-            document.getElementsByName('baidu')[0].style.backgroundColor = 'blue';
+            if (getCookie('nows'))
+                document.getElementsByName(getCookie('nows'))[0].style.backgroundColor = 'blue';
+            else
+                document.getElementsByName('baidu')[0].style.backgroundColor = 'blue';
             $('#search-input').keyup(function(event) {
                 if (event.keyCode == 13) {
                     search($('#search-input').val());
