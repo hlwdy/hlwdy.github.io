@@ -197,9 +197,10 @@
             var text = prompt("请输入网址", "");
             if (text) {
                 if (!checkURL(text))
-                    if (!checkURL('http://' + text))
+                    if (!checkURL('http://' + text)) {
+                        alert('链接不符合格式!');
                         return;
-                    else
+                    } else
                         text = 'http://' + text;
                 ofs[id] = text;
                 setCookie('ofs', JSON.stringify(ofs));
