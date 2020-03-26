@@ -136,6 +136,8 @@
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="prompt/js/zepto.js"></script>
     <script src="prompt/dist/prompt.js"></script>
+    <script src="alert/js/ui.js"></script>
+    <link href="alert/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -236,7 +238,7 @@
                     if (text) {
                         if (!checkURL(text))
                             if (!checkURL('http://' + text)) {
-                                alert('链接不符合格式!');
+                                malert.toast('链接不符合格式!', 1500);
                                 return;
                             } else
                                 text = 'http://' + text;
