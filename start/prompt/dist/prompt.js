@@ -118,7 +118,7 @@
     /***/
     function(module, exports) {
 
-        module.exports = "<div class=\"prompt js-prompt\" style=\"display:none\">\n    <div class=\"box\">\n        <div class=\"title js-title\">自定义位置</div>\n        <div class=\"input-box\">\n            <input type=\"text\" class=\"input js-input\" placeholder=\"位置名称\" maxlength=\"20\"/>\n        </div>\n        <div class=\"btn-box\">\n            <div class=\"btn is-left-btn js-negative\">取消</div><div class=\"btn is-right-btn js-positive\">添加</div>\n        </div>\n    </div>\n</div>\n";
+        module.exports = "<div class=\"prompt js-prompt\" style=\"display:none\">\n    <div class=\"box\">\n        <div class=\"title js-title\">自定义位置</div>\n        <div class=\"input-box\">\n            <input type=\"text\" class=\"input js-input\" placeholder=\"位置名称\" maxlength=\"50\"/>\n        </div>\n        <div class=\"btn-box\">\n            <div class=\"btn is-left-btn js-negative\">取消</div><div class=\"btn is-right-btn js-positive\">添加</div>\n        </div>\n    </div>\n</div>\n";
 
         /***/
     },
