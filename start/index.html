@@ -132,6 +132,12 @@
             height: 100%;
             margin: 0;
         }
+        
+        #logo {
+            position: absolute;
+            left: calc((100% - 300px) / 2);
+            top: 70px;
+        }
     </style>
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="prompt/js/zepto.js"></script>
@@ -169,6 +175,7 @@
             }
             setCookie('nows', id);
             document.getElementsByName(id)[0].style.backgroundColor = 'blue';
+            document.getElementById('logo').src = 'logo/' + id + '.png';
         }
 
         function search(text) {
@@ -196,9 +203,10 @@
                     nows = 2;
                     break;
             }
-            if (getCookie('nows'))
+            if (getCookie('nows')) {
                 document.getElementsByName(getCookie('nows'))[0].style.backgroundColor = 'blue';
-            else
+                document.getElementById('logo').src = 'logo/' + getCookie('nows') + '.png';
+            } else
                 document.getElementsByName('baidu')[0].style.backgroundColor = 'blue';
 
             if (getCookie('ofs')) {
@@ -261,6 +269,7 @@
             document.getElementsByName(id)[0].getElementsByTagName('div')[0].style.display = 'none';
         }
     </script>
+    <img src="logo/baidu.png" width="300px" id="logo"></img>
     <input type="text" name="q" id="search-input" autocomplete="off">
     <div id="schoose">
         <div id="schoose-one" name="baidu" onclick="changes('baidu')">Baidu</div>
