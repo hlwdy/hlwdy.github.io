@@ -182,10 +182,28 @@
             });
         })
 
+        function checkURL(URL) {
+            var str = URL;
+            var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+            var objExp = new RegExp(Expression);
+            if (objExp.test(str) == true) {
+                return true;
+            } else {
+                return false;
+            }
+        } 
+
         function addofftens(id) {
             var text = prompt("请输入网址", "");
-            ofs[id] = text;
-            setCookie('ofs', JSON.stringify(ofs));
+            if (text) {
+                if (!checkURL(text))
+                    if (!checkURL('http://' + text))
+                        return;
+                    else
+                        text = 'http://' + text;
+                ofs[id] = text;
+                setCookie('ofs', JSON.stringify(ofs));
+            }
         }
     </script>
     <input type="text" name="q" id="search-input" autocomplete="off">
