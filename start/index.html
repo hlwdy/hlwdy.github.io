@@ -102,6 +102,30 @@
             -moz-transition: all 0.5s ease 0s;
             -webkit-transition: all 0.5s ease 0s;
         }
+        
+        #oftens-one div {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(31, 140, 241);
+            margin: 10px;
+            padding: 2px;
+            border-radius: 12px;
+            float: right;
+            cursor: pointer;
+            transition: all 0.5s ease 0s;
+            -moz-transition: all 0.5s ease 0s;
+            -webkit-transition: all 0.5s ease 0s;
+            color: white;
+            text-align: center;
+            display: none;
+        }
+        
+        #oftens-one div:hover {
+            background-color: rgb(20, 99, 173);
+            transition: all 0.5s ease 0s;
+            -moz-transition: all 0.5s ease 0s;
+            -webkit-transition: all 0.5s ease 0s;
+        }
     </style>
     <script src="js/jquery.min.js" type="text/javascript"></script>
 </head>
@@ -172,7 +196,8 @@
                 for (i = 1; i <= 5; i++) {
                     if (ofs['of' + i.toString()] != '') {
                         document.getElementsByName('of' + i.toString())[0].getElementsByTagName('span')[0].innerText = ofs['of' + i.toString()];
-                        document.getElementsByName('of' + i.toString())[0].getElementsByTagName('span')[0].style.fontSize = '10px';
+                        document.getElementsByName('of' + i.toString())[0].getElementsByTagName('span')[0].style.fontSize = '12px';
+                        document.getElementsByName('of' + i.toString())[0].getElementsByTagName('div')[0].style.display = 'block';
                     }
                 }
             }
@@ -208,6 +233,14 @@
                 setCookie('ofs', JSON.stringify(ofs));
             }
         }
+
+        function removeofftens(id) {
+            event.stopPropagation();
+            ofs[id] = '';
+            document.getElementsByName(id)[0].getElementsByTagName('span')[0].innerText = '+';
+            document.getElementsByName(id)[0].getElementsByTagName('span')[0].style.fontSize = '85px';
+            document.getElementsByName(id)[0].getElementsByTagName('div')[0].style.display = 'none';
+        }
     </script>
     <input type="text" name="q" id="search-input" autocomplete="off">
     <div id="schoose">
@@ -216,11 +249,21 @@
         <div id="schoose-one" name="bing" onclick="changes('bing')">Bing</div>
     </div>
     <div id="oftens">
-        <div id="oftens-one" name="of1" onclick="addofftens('of1')"><span style="font-size: 85px;">+</span></div>
-        <div id="oftens-one" name="of2" onclick="addofftens('of2')"><span style="font-size: 85px;">+</span></div>
-        <div id="oftens-one" name="of3" onclick="addofftens('of3')"><span style="font-size: 85px;">+</span></div>
-        <div id="oftens-one" name="of4" onclick="addofftens('of4')"><span style="font-size: 85px;">+</span></div>
-        <div id="oftens-one" name="of5" onclick="addofftens('of5')"><span style="font-size: 85px;">+</span></div>
+        <div id="oftens-one" name="of1" onclick="addofftens('of1')"><span style="font-size: 85px;">+</span>
+            <div onclick="removeofftens('of1')">x</div>
+        </div>
+        <div id="oftens-one" name="of2" onclick="addofftens('of2')"><span style="font-size: 85px;">+</span>
+            <div onclick="removeofftens('of2')">x</div>
+        </div>
+        <div id="oftens-one" name="of3" onclick="addofftens('of3')"><span style="font-size: 85px;">+</span>
+            <div onclick="removeofftens('of3')">x</div>
+        </div>
+        <div id="oftens-one" name="of4" onclick="addofftens('of4')"><span style="font-size: 85px;">+</span>
+            <div onclick="removeofftens('of4')">x</div>
+        </div>
+        <div id="oftens-one" name="of5" onclick="addofftens('of5')"><span style="font-size: 85px;">+</span>
+            <div onclick="removeofftens('of5')">x</div>
+        </div>
     </div>
 </body>
 
