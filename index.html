@@ -5,36 +5,38 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <title>Hlwdy</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/fontAwesome.css">
-        <link rel="stylesheet" href="css/light-box.css">
-        <link rel="stylesheet" href="css/templatemo-main.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+	<script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/main.js"></script>
     </head>
 <body>
 <style>
 ::-moz-selection {
   color: #fff;
   background-color: #39bad6; }
-
 ::-webkit-selection {
   color: #fff;
   background-color: #39bad6; }
-
 ::selection {
   color: #fff;
   background-color: #39bad6; }
 </style>
-    <div class="sequence">
-      <div class="seq-preloader">
-        <svg width="39" height="16" viewBox="0 0 39 16" xmlns="http://www.w3.org/2000/svg" class="seq-preload-indicator"><g fill="#F96D38"><path class="seq-preload-circle seq-preload-circle-1" d="M3.999 12.012c2.209 0 3.999-1.791 3.999-3.999s-1.79-3.999-3.999-3.999-3.999 1.791-3.999 3.999 1.79 3.999 3.999 3.999z"/><path class="seq-preload-circle seq-preload-circle-2" d="M15.996 13.468c3.018 0 5.465-2.447 5.465-5.466 0-3.018-2.447-5.465-5.465-5.465-3.019 0-5.466 2.447-5.466 5.465 0 3.019 2.447 5.466 5.466 5.466z"/><path class="seq-preload-circle seq-preload-circle-3" d="M31.322 15.334c4.049 0 7.332-3.282 7.332-7.332 0-4.049-3.282-7.332-7.332-7.332s-7.332 3.283-7.332 7.332c0 4.05 3.283 7.332 7.332 7.332z"/></g></svg>
-      </div>
-    </div>
+<script>
+$(window).on('load', function() {
+    $('.loader').fadeOut();
+    $('.loader-mask').delay(350).fadeOut('slow');
+    $(window).trigger("resize");
+  });
+</script>
+	<div class="loader-mask">
+		<div class="loader">
+			"Loading..."
+		</div>
+	</div>
         <nav>
           <ul>
-            <li><a href="#1"> <em>Homepage</em></a></li>
+            <li><a href="#1"> <em><i class="fa fa-fw fa-language"></i>Homepage</em></a></li>
             <li><a href="#2"> <em>Hlw player</em></a></li>
 	    <li><a href="#3"> <em>Online Markdown</em></a></li>
 	    <li><a href="#4"> <em>Online IDE</em></a></li>
@@ -86,8 +88,8 @@
                     <div class="col-md-6">
                         <div class="left-content">
                             <h2>Online IDE</h2>
-                            <p>An online IDE. Referenced Judge0API.</p> 
-                          <div class="fb-btn" style="font-size: x-large"><a href="ide/index.html">Click to access</a></div>
+                            <p>A self-made online IDE.</p> 
+                          <div class="fb-btn" style="font-size: x-large"><a href="https://hlwdyblog.tk/ide">Click to access</a></div>
                       </div>
                     </div>
                 </div>
@@ -107,12 +109,5 @@
             </div>
           </div>
         </div>
-        </div>
-
-    <script src="js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/datepicker.js"></script>
-    <script src="js/main.js"></script>
-
 </body>
 </html>
