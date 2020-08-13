@@ -4,9 +4,22 @@
 	<meta charset="utf-8">
 	<title>Online MarkDown</title>
 	<link rel="stylesheet" type="text/css" href="build/app-bundle.css">
+	<script src="../js/jquery-1.11.2.min.js"></script>
 	<style id="viewer-styles"></style>
+	<script>
+	$(window).on('load', function() {
+		$('.loader').fadeOut();
+		$('.loader-mask').delay(350).fadeOut('slow');
+		$(window).trigger("resize");
+	});
+	</script>
 </head>
 <body>
+	<div class="loader-mask">
+		<div class="loader">
+			"Loading..."
+		</div>
+	</div>
 	<div class="wrapper">
 		<div class="navbar">
 			<ul>

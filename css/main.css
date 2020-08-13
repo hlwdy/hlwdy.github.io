@@ -252,23 +252,11 @@ nav a:hover::before {
 .slides .slide img {
   width: 100%;
 }
-.main-btn a:hover {
-	background-color: #fff;
-	color: #232323!important;
-}
+
 .first-content {
 	padding: 100px;
 	text-align: left;
 	padding-top: 13%;
-}
-
-.first-content .author-image img {
-	margin-top: 15px;
-	border-radius: 30px;
-	max-width: 100%;
-	overflow: hidden;
-	float: left;
-	margin-right: 35px;
 }
 
 .first-content h2 {
@@ -299,28 +287,9 @@ nav a:hover::before {
 	font-weight: 600;
 }
 
-.first-content .main-btn {
-	display: inline-block;
-	margin-right: 15px;
-}
-
-.main-btn a {
-	display: inline-block;
-	border: 2px solid #fff;
-	padding: 8px 15px;
-	font-size: 13px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	color: #fff;
-	text-decoration: none;
-	transition: all 0.5s;
-	transition: all 0.5s;
-}
-
 .fb-btn {
 	display: inline-block;
 }
-
 .fb-btn a {
 	display: inline-block;
 	background-color: #fff;
@@ -333,13 +302,10 @@ nav a:hover::before {
 	text-decoration: none;
 	transition: all 0.5s;
 }
-
 .fb-btn a:hover {
 	color: #fff;
 	background-color: transparent;
 }
-
-
 .second-content .container-fluid {
 	padding-right: 0px;
 	padding-left: 0px;
@@ -400,27 +366,6 @@ nav a:hover::before {
 	transition: all 0.5s;
 }
 
-.footer .content {
-	left: 30%;
-	width: 70%;
-	max-width: 70%;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	display: inline-block;
-}
-
-.footer .content p {
-	text-align: center;
-	font-size: 13px;
-	color: #fff;
-	margin-bottom: 20px;
-}
-
-.footer .content p a {
-	color: #aaa;
-	text-decoration: none;
-}
 /* REPONSIVE */
 
 @media (max-width: 991px) {
@@ -432,13 +377,6 @@ nav a:hover::before {
 	.first-content {
 		text-align: center;
 		padding: 50px;
-	}
-
-	.first-content .author-image img {
-		max-width: 195px;
-		float: none;
-		margin-right: 0px;
-		margin-bottom: 30px;
 	}
 
 	.third-content .first-section {
@@ -474,12 +412,6 @@ nav a:hover::before {
 
 	.first-content {
 		padding: 30px 5px;
-	}
-
-	.first-content .main-btn {
-		display: inline-block;
-		margin-right: 0px;
-		margin-bottom: 15px;
 	}
 
 	.second-content .left-content {
