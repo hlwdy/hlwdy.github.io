@@ -1,6 +1,6 @@
 function autohttps(orurl){
 	var protocol=window.location.protocol;
-	if(protocol=="https:")return orurl.replace("http","https");
+	if(protocol=="https:")return orurl.replace("http:","https:");
 	return orurl;
 }
 
@@ -25,11 +25,11 @@ L.TileLayer.ChinaProvider = L.TileLayer.extend({
 L.TileLayer.ChinaProvider.providers = {
     GaoDe: {
         Normal: {
-            Map: 'http://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}'
+            Map: autohttps('http://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}')
         },
         Satellite: {
-            Map: 'http://webst0{s}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}',
-            Annotion: 'http://webst0{s}.is.autonavi.com/appmaptile?style=8&x={x}&y={y}&z={z}'
+            Map: autohttps('http://webst0{s}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}'),
+            Annotion: autohttps('http://webst0{s}.is.autonavi.com/appmaptile?style=8&x={x}&y={y}&z={z}')
         },
         Subdomains: ["1", "2", "3", "4"]
     },
