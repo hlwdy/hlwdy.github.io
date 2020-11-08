@@ -5,6 +5,7 @@ $(document).ready(function(){
 			var res=JSON.parse(data);
 			document.title=unescape(res['title']);
 			ShowMd(unescape(res['text']).replaceAll(' ','&nbsp;').replaceAll('#&nbsp;','# ').replace('\n','## ').replace('\n','\n### ').replaceAll('\n','\n\n').replace('输入输出格式','### 输入输出格式').replace('输入输出样例','### 输入输出样例').replace('说明\n','### 说明\n'));
+			var imgs=document.getElementsByTagName('img');for(var i=0;i<imgs.length;i++)imgs[i].referrerPolicy="no-referrer";
 		});
 	}
 });
