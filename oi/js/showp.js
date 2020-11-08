@@ -7,9 +7,6 @@ $(document).ready(function(){
 			ShowMd(unescape(res['text']).replaceAll(' ','&nbsp;').replaceAll('#&nbsp;','# ').replace('\n','## ').replace('\n','\n### ').replaceAll('\n','\n\n').replace('输入输出格式','### 输入输出格式').replace('输入输出样例','### 输入输出样例').replace('说明\n','### 说明\n'));
 		});
 	}
-	$("img").on('error',function(){
-		var imgs=document.getElementsByTagName('img');for(var i=0;i<imgs.length;i++)imgs[i].referrerPolicy="no-referrer";
-    });
 });
 
 function ShowMd(text) {
