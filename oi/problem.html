@@ -34,9 +34,7 @@ pre{
 </head>
 <body>
 <script>
-$("img").on('error',function(){
-	var imgs=document.getElementsByTagName('img');for(var i=0;i<imgs.length;i++)imgs[i].referrerPolicy="no-referrer";
-});
+window.addEventListener('error',function(e){if(e.target.tagName.toUpperCase()==='IMG' ){e.target.referrerPolicy="no-referrer";}},true);
 </script>
 <div id="maindiv">
 <div id="content"></div>
