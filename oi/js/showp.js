@@ -4,7 +4,9 @@ $(document).ready(function(){
 		$.get(url,function(data,textStatus){
 			var res=JSON.parse(data);
 			document.title=unescape(res['title']);
-			ShowMd(unescape(res['text']).replaceAll(' ','&nbsp;').replaceAll('#&nbsp;','# ').replace('\n','## ').replace('\n','\n### ').replaceAll('\n','\n\n').replace('输入输出格式','### 输入输出格式').replace('输入输出样例','### 输入输出样例').replace('说明\n','### 说明\n'));
+			ShowMd(unescape(res['text']).replace('\n','## ').replace('\n','\n### ').replaceAll('\n','\n\n').replace('输入输出格式','### 输入输出格式').replace('输入输出样例','### 输入输出样例').replace('说明\n','### 说明\n'));
+			$('.loader-mask').fadeOut('slow');
+			$(window).trigger("resize");
 		});
 	}
 });
